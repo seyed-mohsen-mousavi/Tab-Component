@@ -22,11 +22,16 @@ function App() {
   return (
     <div className="tab">
       <div className="tab__header">
-        <button>ITEM one</button>
-        <button>ITEM two</button>
-        <button>ITEM three</button>
+        {tabData.map((tab) => {
+          return (
+            <button key={tab.id}>
+              <span>{tab.title}</span>
+              <span className="tab-indicator"></span>
+            </button>
+          );
+        })}
       </div>
-      <div className="tab__contet"></div>
+      <div className="tab__content">Dummy text ...</div>
     </div>
   );
 }
